@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Web API Spike", "Web API Spike\Web API Spike.csproj", "{CB557BCB-8E74-46D8-92E3-C57950F86256}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Web API Spike.Tests", "Web API Spike.Tests\Web API Spike.Tests.csproj", "{9CCA790F-8C9F-4CA6-BF88-8B501EFA19EB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CB557BCB-8E74-46D8-92E3-C57950F86256}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CB557BCB-8E74-46D8-92E3-C57950F86256}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CB557BCB-8E74-46D8-92E3-C57950F86256}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CB557BCB-8E74-46D8-92E3-C57950F86256}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9CCA790F-8C9F-4CA6-BF88-8B501EFA19EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9CCA790F-8C9F-4CA6-BF88-8B501EFA19EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9CCA790F-8C9F-4CA6-BF88-8B501EFA19EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9CCA790F-8C9F-4CA6-BF88-8B501EFA19EB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
