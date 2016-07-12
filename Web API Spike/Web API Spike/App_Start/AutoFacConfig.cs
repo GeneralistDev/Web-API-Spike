@@ -37,6 +37,8 @@ namespace Web_API_Spike
 
             builder.RegisterType<SampleController>();
 
+            builder.RegisterWebApiFilterProvider(config);
+
             // More complex mediator registration
             RegisterMediator(builder);
 
