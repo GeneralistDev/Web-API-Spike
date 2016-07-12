@@ -19,7 +19,7 @@ namespace Web_API_Spike
 
         static AutoFacConfig()
         {
-            Assemblies = AppDomain.CurrentDomain.GetAssemblies().Where(a => a.GetName().Name.StartsWith("Web_API_Spike")
+            Assemblies = AppDomain.CurrentDomain.GetAssemblies().Where(a => a.GetName().Name.StartsWith("Web API Spike")
             ).ToArray();
         }
 
@@ -49,6 +49,7 @@ namespace Web_API_Spike
 
         private static void RegisterMediator(ContainerBuilder builder)
         {
+
             builder.RegisterAssemblyTypes(typeof(IMediator).Assembly).AsImplementedInterfaces();
             builder.Register<SingleInstanceFactory>(ctx =>
             {
@@ -65,7 +66,31 @@ namespace Web_API_Spike
             builder.RegisterAssemblyTypes(typeof(IMediator).Assembly).As<IMediator>().AsImplementedInterfaces();
 
             foreach (var handler in Assemblies.SelectMany(a => a.GetTypes())
+                .Where(x => x.GetInterfaces().Any(i => i.IsClosedTypeOf(typeof(IAsyncRequest<>)))))
+            {
+                builder.RegisterType(handler)
+                    .AsImplementedInterfaces()
+                    .InstancePerRequest();
+            }
+
+            foreach (var handler in Assemblies.SelectMany(a => a.GetTypes())
+                .Where(x => x.GetInterfaces().Any(i => i.IsClosedTypeOf(typeof(IRequest<>)))))
+            {
+                builder.RegisterType(handler)
+                    .AsImplementedInterfaces()
+                    .InstancePerRequest();
+            }
+
+            foreach (var handler in Assemblies.SelectMany(a => a.GetTypes())
                 .Where(x => x.GetInterfaces().Any(i => i.IsClosedTypeOf(typeof(IAsyncRequestHandler<,>)))))
+            {
+                builder.RegisterType(handler)
+                    .AsImplementedInterfaces()
+                    .InstancePerRequest();
+            }
+
+            foreach (var handler in Assemblies.SelectMany(a => a.GetTypes())
+                .Where(x => x.GetInterfaces().Any(i => i.IsClosedTypeOf(typeof(IRequestHandler<,>)))))
             {
                 builder.RegisterType(handler)
                     .AsImplementedInterfaces()
