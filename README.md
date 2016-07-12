@@ -15,4 +15,4 @@ Clone the project, open and build solution in Visual studio 2015
 4. And the same request with an empty body `{ }` should return a list of errors
 
 ## What's included
-[See the project wiki](https://bitbucket.org/rlgod/web-api-spike/wiki/Home) for more information about the code itself.
+[See the project wiki](https://github.com/rlgod/Web-API-Spike/wiki/Web-API-Spike) for more information about the code itself.
